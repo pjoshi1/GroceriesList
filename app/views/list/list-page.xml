@@ -1,0 +1,19 @@
+<ActivityIndicator busy="{{ isLoading }}" row="1" horizontalAlignment="center"
+    verticalAlignment="center" />
+
+
+<GridLayout rows="auto, *">
+
+    <GridLayout row="0" columns="*, auto" class="add-bar">
+        <TextField text="{{ grocery }}" id="grocery" hint="Enter a grocery item"
+            col="0" />
+        <Image src="~/images/add.png" tap="add" col="1" />
+    </GridLayout>
+
+    <lv:RadListView items="{{ groceryList }}" row="1"
+        itemSwipeProgressStarted="onSwipeCellStarted" swipeActions="true">
+
+
+        <lv:RadListView items="{{ groceryList }}" class="{{ listLoaded ? 'visible' : '' }}"
+            row="1" itemSwipeProgressStarted="onSwipeCellStarted"
+            swipeActions="true">
